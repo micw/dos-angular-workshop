@@ -3,6 +3,20 @@
 - :: vor Expression erzeugt ein one-time-binding (ohne Watcher)
 - $rootscope: global, kann z.B. für windows-title verwendet werden
 - $interpolate - Service erzeugt aus einer Expression eine Funktion, welche gegen einen Scope läuft
-
+- snackbar -> Notifications
+  - injection via Angular-Constants
+- $.support.cors=true ???
+- Tests: protractor
+  - für angular und nicht-angular-Anwendungen (bei letzteren muss eine speziele Setting gemacht werden, damit
+    nicht auf den angular-event-cycle gewartet wird)
+  - Verwendet selenium webdriver
+  - Fluent-API für Testcode
+    - kann auch "byBinding" als Selector für Angular-Bindings, byModel etc.
+    - kann auf ng-repeat matchen und Werte einzeln überprüfen
+  - Jasimne: expect(selector).toContain(expectation)
+  - ExpectedConditions: z.B. warten, dass etwas geladen wurde mit Timeout
+  - Unit-Tests mit Jasmine, Karma oder Mocka
+  - Angular-Mocks
+  - beforeEach-Expressions als Präporzessor, $httpBackend für Mock-Http
 
 angular2buch.de/presentations/book-rating/
