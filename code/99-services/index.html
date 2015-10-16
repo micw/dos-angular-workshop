@@ -17,10 +17,7 @@
 
 <div class="container">
 
-  <!-- Our Code goes here -->
-  <section class="sample" ng-controller="WorkshopController as wc">
-    <p>{{ wc.welcome }}</p>
-  </section>
+  <div ng-view/>
 
 </div>
 
@@ -28,7 +25,10 @@
 
 <!-- AngularJS -->
 <script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
 <script src="module.js"></script>
-<script src="controller.js"></script>
+<script src="service.js"></script>
+<script src="overview.js"></script>
+<script src="news.js"></script>
 </body>
 </html>

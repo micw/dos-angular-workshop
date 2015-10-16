@@ -1,4 +1,4 @@
-<html ng-app="HeiseApp">
+<html ng-app="devopenspace">
 <head>
   <title>Learning AngularJS</title>
   <link rel="icon" href="../../favicon.ico">
@@ -19,7 +19,13 @@
 
   <!-- Our Code goes here -->
   <section class="sample" ng-controller="WorkshopController as wc">
+    <input type="text" ng-model="wc.search" placeholder="Nach Namen filtern..."/>
     <p>{{ wc.welcome }}</p>
+      <span ng-cloak ng-repeat="attendee in wc.attendees | filter: wc.search track by $index">
+        <ng-if ng-if="!$first && !$last">, </ng-if>
+        <ng-if ng-if="$last && $index &gt; 0"> und </ng-if>
+        {{ attendee.name }}
+      </span>
   </section>
 
 </div>
@@ -30,5 +36,6 @@
 <script src="../../bower_components/angular/angular.js"></script>
 <script src="module.js"></script>
 <script src="controller.js"></script>
+<script src="factory.js"></script>
 </body>
 </html>

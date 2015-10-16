@@ -1,0 +1,11 @@
+<div ng-controller="OverviewController as hn">
+    <div ng-repeat="stream in hn.streams">
+        {{ hn.getUrl() }}
+        <h3>{{ stream.title }}</h3>
+        <ul>
+            <li ng-repeat="item in stream.stream">
+                <a ng-click="hn.navigateTo(item)">{{ item.title }}</a>
+            </li>
+        </ul>
+    </div>
+</div>

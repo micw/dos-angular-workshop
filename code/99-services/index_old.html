@@ -15,12 +15,22 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container" ng-controller="HeiseNewsController as hn">
 
-  <!-- Our Code goes here -->
-  <section class="sample" ng-controller="WorkshopController as wc">
-    <p>{{ wc.welcome }}</p>
-  </section>
+
+  <div ng-if="hn.getUrl()" ng-repeat="stream in hn.streams">
+
+  </div>
+
+  <div ng-if="!hn.getUrl()" ng-repeat="stream in hn.streams">
+    {{ hn.getUrl() }}
+      <h3>{{ stream.title }}</h3>
+      <ul>
+          <li ng-repeat="item in stream.stream">
+              <a ng-click="hn.navigateTo(item)">{{ item.title }}</a>
+          </li>
+      </ul>
+  </div>
 
 </div>
 
@@ -28,7 +38,9 @@
 
 <!-- AngularJS -->
 <script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
 <script src="module.js"></script>
-<script src="controller.js"></script>
+<script src="service.js"></script>
+<script src="overview.js"></script>
 </body>
 </html>

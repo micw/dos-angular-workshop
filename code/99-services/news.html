@@ -1,0 +1,4 @@
+<div ng-controller="NewsController as hn">
+    <h3>{{ hn.news.title }}</h3>
+    <div ng-bind-html="hn.news.content.text_html | rawHtml"></div>
+</div>
