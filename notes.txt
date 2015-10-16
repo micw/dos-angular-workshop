@@ -1,4 +1,5 @@
 - ng-cloak: blendet Element aus, bis die zugehörige Expression evaluiert wird (verhindert "aufblitzen" von {{ ... }} )
 - Plugin für Chrome: zählt die Watchers (ng-inspector)
 - :: vor Expression erzeugt ein one-time-binding (ohne Watcher)
-
+- $rootscope: global, kann z.B. für windows-title verwendet werden
+- $interpolate - Service erzeugt aus einer Expression eine Funktion, welche gegen einen Scope läuft
